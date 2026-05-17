@@ -1,2 +1,12 @@
-User-Agent: *
-Disallow:
+# robots.txt para Lover's Brasileiras
+
+User-agent: *
+Allow: /
+
+# Páginas que não devem ser indexadas
+Disallow: /api/
+Disallow: /checkout/
+Disallow: /perfil/
+
+# Sitemap
+Sitemap: https://loversbrasileiras.com.br/sitemap.xml

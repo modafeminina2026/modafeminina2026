@@ -1,0 +1,126 @@
+📁 ESTRUTURA DE ARQUIVOS DO WEBHOOK
+═══════════════════════════════════════════════════════════════
+
+configurar webhooks/
+├── 📄 server.js                          ← Servidor webhook principal
+├── 📄 package.json                       ← Dependências (express, stripe, dotenv)
+├── 📄 .env.local                         ← Template de variáveis de ambiente
+│
+├── 📚 DOCUMENTAÇÃO
+│   ├── 📖 README.md                      ← Guia rápido de início
+│   ├── 📖 TESTING.md                     ← Como testar localmente
+│   ├── 📖 INTEGRATION.md                 ← Integração com Supabase e Nuxt
+│   ├── 📖 SECURITY.md                    ← Checklist de segurança
+│   └── 📖 SETUP_COMPLETE.md              ← Resumo do que foi configurado
+│
+├── 🛠️ FERRAMENTAS
+│   ├── 🔧 setup-webhook.js               ← Script interativo de setup
+│   └── 📝 server-with-supabase.example.js ← Exemplo com Supabase
+│
+└── 📋 ESTE ARQUIVO
+    └── ARQUIVOS.txt                      ← Você está aqui!
+
+
+🚀 COMO COMEÇAR
+═══════════════════════════════════════════════════════════════
+
+1️⃣  Obter o Webhook Signing Secret:
+    $ stripe login
+    $ stripe listen --forward-to localhost:4242/webhook
+    
+    Copie o secret (começa com whsec_)
+
+2️⃣  Configurar o Secret:
+    $ npm run setup
+    
+    Ou edite o .env manualmente
+
+3️⃣  Iniciar o Servidor:
+    $ npm start
+    
+    Você verá: 🚀 Webhook server running on port 4242
+
+4️⃣  Testar com Stripe CLI (em outro terminal):
+    $ stripe trigger payment_intent.succeeded
+    
+    Veja os logs no servidor!
+
+
+📚 DOCUMENTAÇÃO RÁPIDA
+═══════════════════════════════════════════════════════════════
+
+README.md
+  └─ Visão geral e início rápido
+
+TESTING.md
+  └─ Guia completo de testes locais
+  └─ Troubleshooting
+
+INTEGRATION.md
+  └─ Como integrar com Supabase
+  └─ Como integrar com Nuxt
+  └─ Exemplos de código
+  └─ Deployment (Vercel, AWS Lambda)
+
+SECURITY.md
+  └─ Checklist de segurança
+  └─ Problemas comuns
+  └─ Monitoramento
+  └─ Resposta a incidentes
+
+SETUP_COMPLETE.md
+  └─ Resumo do que foi configurado
+  └─ Próximos passos
+
+
+🔒 SEGURANÇA
+═══════════════════════════════════════════════════════════════
+
+✅ Verificação de assinatura Stripe
+✅ Proteção de secrets em variáveis de ambiente
+✅ Tratamento de erros
+✅ Logging para debugging
+✅ Códigos HTTP apropriados
+
+
+📊 EVENTOS SUPORTADOS
+═══════════════════════════════════════════════════════════════
+
+✅ payment_intent.succeeded      - Pagamento bem-sucedido
+✅ payment_intent.payment_failed - Pagamento falhou
+✅ charge.succeeded              - Cobrança bem-sucedida
+✅ charge.failed                 - Cobrança falhou
+✅ payment_method.attached       - Método de pagamento anexado
+
+
+🎯 PRÓXIMOS PASSOS
+═══════════════════════════════════════════════════════════════
+
+1. Leia INTEGRATION.md para integrar com Supabase
+2. Crie uma tabela de pagamentos no Supabase
+3. Atualize server.js para salvar eventos no banco
+4. Crie composables no Nuxt para consultar pagamentos
+5. Revise SECURITY.md antes de ir para produção
+
+
+💡 DICAS
+═══════════════════════════════════════════════════════════════
+
+• Use server-with-supabase.example.js como referência
+• Sempre verifique a assinatura do webhook
+• Nunca coloque secrets no código
+• Implemente idempotência para eventos duplicados
+• Configure alertas para falhas de webhook
+
+
+❓ PRECISA DE AJUDA?
+═══════════════════════════════════════════════════════════════
+
+Leia os arquivos de documentação:
+  • TESTING.md - Para problemas de teste
+  • SECURITY.md - Para problemas de segurança
+  • INTEGRATION.md - Para integração
+
+Ou consulte:
+  • https://stripe.com/docs/webhooks
+  • https://stripe.com/docs/stripe-cli
