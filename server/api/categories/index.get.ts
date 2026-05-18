@@ -1,7 +1,13 @@
-import { serverSupabaseClient } from '#supabase/server'
+import { createClient } from '@supabase/supabase-js'
 
 export default defineEventHandler(async (event) => {
-  const client = await serverSupabaseClient(event)
+  const config = useRuntimeConfig()
+
+  // Use service role to ensure categories are always accessible
+  const client = createClient(
+    process.env.SUPABASE_URL!,
+    config.supabaseServiceRoleKey as string,
+  )
 
   const { data, error } = await client
     .from('categories')

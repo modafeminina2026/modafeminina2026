@@ -81,9 +81,14 @@ watch(() => form.name, (val) => {
 // Auto-save draft
 let autoSaveTimer: ReturnType<typeof setInterval>
 onMounted(async () => {
-  // Load categories (public endpoint, no auth needed)
-  const catRes = await $fetch<{ id: string; name: string }[]>('/api/categories').catch(() => [])
-  categories.value = Array.isArray(catRes) ? catRes : []
+  // Load categories (public endpoint)
+  try {
+    const catRes = await $fetch<{ id: string; name: string }[]>('/api/categories')
+    categories.value = Array.isArray(catRes) ? catRes : []
+  } catch (e) {
+    console.error('Erro ao carregar categorias:', e)
+    categories.value = []
+  }
 
   // Load product if editing
   if (props.mode === 'edit' && props.productId) {
