@@ -179,7 +179,17 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  const session = await stripe.checkout.sessions.create(sessionParams)
+  let session
+  try {
+    session = await stripe.checkout.sessions.create(sessionParams)
+  } catch (stripeErr: unknown) {
+    const err = stripeErr as { message?: string; code?: string; param?: string; type?: string }
+    console.error('[Stripe Error]', JSON.stringify({ message: err.message, code: err.code, param: err.param, type: err.type }))
+    throw createError({
+      statusCode: 400,
+      message: `Stripe: ${err.message ?? 'Erro desconhecido'} (param: ${err.param ?? 'n/a'})`,
+    })
+  }
 
   return { url: session.url }
 })
