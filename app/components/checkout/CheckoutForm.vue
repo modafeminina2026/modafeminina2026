@@ -238,26 +238,33 @@ async function submit() {
         <h3 class="font-semibold text-gray-900 mb-4">Confirmar Pedido</h3>
 
         <!-- Bandeiras aceitas -->
-        <div class="bg-blue-50 border border-blue-100 rounded-xl p-3 mb-4 flex items-start gap-3">
-          <span class="text-lg flex-shrink-0">💳</span>
-          <div>
-            <p class="text-sm font-medium text-blue-800 mb-1">Bandeiras aceitas</p>
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="inline-flex items-center gap-1 text-xs bg-white border border-blue-200 text-blue-700 px-2 py-1 rounded-lg font-medium">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" class="h-3 w-auto" loading="lazy" />
-                Visa
-              </span>
-              <span class="inline-flex items-center gap-1 text-xs bg-white border border-blue-200 text-blue-700 px-2 py-1 rounded-lg font-medium">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" class="h-3 w-auto" loading="lazy" />
-                Mastercard
-              </span>
-              <span class="inline-flex items-center gap-1 text-xs bg-white border border-blue-200 text-blue-700 px-2 py-1 rounded-lg font-medium">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/200px-American_Express_logo_%282018%29.svg.png" alt="Amex" class="h-3 w-auto" loading="lazy" />
-                Amex
-              </span>
-            </div>
-            <p class="text-xs text-blue-600 mt-1.5">⚠️ Cartões Elo, Hipercard e débito não são aceitos no momento.</p>
+        <div class="bg-rose-50 border border-rose-100 rounded-xl p-3 mb-4">
+          <p class="text-xs font-semibold text-gray-700 mb-2">💳 Bandeiras aceitas neste site:</p>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <!-- Visa -->
+            <span class="inline-flex items-center gap-1.5 bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 shadow-sm">
+              <svg viewBox="0 0 48 16" class="h-4 w-auto" aria-label="Visa">
+                <text x="0" y="13" font-family="Arial" font-weight="900" font-size="16" fill="#1A1F71">VISA</text>
+              </svg>
+            </span>
+            <!-- Mastercard -->
+            <span class="inline-flex items-center gap-1.5 bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 shadow-sm">
+              <svg viewBox="0 0 38 24" class="h-5 w-auto" aria-label="Mastercard">
+                <circle cx="13" cy="12" r="10" fill="#EB001B"/>
+                <circle cx="25" cy="12" r="10" fill="#F79E1B"/>
+                <path d="M19 5.27A10 10 0 0 1 22.73 12 10 10 0 0 1 19 18.73 10 10 0 0 1 15.27 12 10 10 0 0 1 19 5.27z" fill="#FF5F00"/>
+              </svg>
+              <span class="text-xs font-medium text-gray-700">Mastercard</span>
+            </span>
+            <!-- Amex -->
+            <span class="inline-flex items-center gap-1.5 bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 shadow-sm">
+              <svg viewBox="0 0 48 16" class="h-4 w-auto" aria-label="American Express">
+                <rect width="48" height="16" rx="2" fill="#2E77BC"/>
+                <text x="4" y="12" font-family="Arial" font-weight="900" font-size="9" fill="white">AMEX</text>
+              </svg>
+            </span>
           </div>
+          <p class="text-xs text-rose-600 font-medium">⚠️ Cartões Elo, Hipercard e débito não são aceitos no momento.</p>
         </div>
 
         <!-- Resumo do comprador -->
