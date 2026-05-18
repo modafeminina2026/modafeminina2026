@@ -39,6 +39,7 @@ export default defineNuxtConfig({
     encryptionKey: process.env.ENCRYPTION_KEY,
     supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
     adminSetupKey: process.env.ADMIN_SETUP_KEY,
+    mpAccessToken: process.env.MP_ACCESS_TOKEN,
 
     // Public — exposed to client
     public: {

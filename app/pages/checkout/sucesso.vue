@@ -6,14 +6,31 @@ const { clearCart } = useCart()
 const { formatPickupCode, formatPickupDate } = usePickup()
 const { playOrderComplete } = useSound()
 
-const sessionId = route.query.session_id as string
+const sessionId = route.query.session_id as string | undefined
+const orderId = route.query.order_id as string | undefined
+const pickupCodeParam = route.query.pickup_code as string | undefined
+const orderNumberParam = route.query.order_number as string | undefined
 
-// Buscar pedido pelo session_id
-const { data: order, pending, error } = await useFetch(
-  `/api/orders/by-session?session_id=${sessionId}`,
-  { key: `order-${sessionId}` }
-)
+// Pix: dados diretos da query string
+const pixOrder = computed(() => {
+  if (!orderId) return null
+  return {
+    id: orderId,
+    order_number: orderNumberParam ?? null,
+    pickup_code: pickupCodeParam ?? null,
+    delivery_method: pickupCodeParam ? 'pickup' : 'shipping',
+    total: null,
+    subtotal: null,
+    shipping_cost: null,
+  }
+})
 
+// Stripe: buscar pelo session_id
+const { data: stripeOrder, pending, error } = sessionId
+  ? await useFetch(`/api/orders/by-session?session_id=${sessionId}`, { key: `order-${sessionId}` })
+  : { data: ref(null), pending: ref(false), error: ref(null) }
+
+const order = computed(() => pixOrder.value ?? stripeOrder.value)
 const isPickup = computed(() => order.value?.delivery_method === 'pickup')
 
 // Limpar carrinho e tocar som de celebração
