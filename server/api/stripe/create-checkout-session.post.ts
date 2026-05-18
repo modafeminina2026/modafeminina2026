@@ -167,6 +167,11 @@ export default defineEventHandler(async (event) => {
     cancel_url: `${appUrl}/checkout/cancelado`,
     payment_method_types: ['card'],
     locale: 'pt-BR',
+    custom_text: {
+      submit: {
+        message: 'Aceitamos apenas Visa, Mastercard e American Express. Cartões Elo e Hipercard não são aceitos.',
+      },
+    },
   }
 
   // Adicionar boleto apenas se tiver CPF válido (11 dígitos = CPF, 14 = CNPJ)
