@@ -237,6 +237,29 @@ async function submit() {
       <div v-else-if="stepContent === 5">
         <h3 class="font-semibold text-gray-900 mb-4">Confirmar Pedido</h3>
 
+        <!-- Bandeiras aceitas -->
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-3 mb-4 flex items-start gap-3">
+          <span class="text-lg flex-shrink-0">💳</span>
+          <div>
+            <p class="text-sm font-medium text-blue-800 mb-1">Bandeiras aceitas</p>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center gap-1 text-xs bg-white border border-blue-200 text-blue-700 px-2 py-1 rounded-lg font-medium">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" class="h-3 w-auto" loading="lazy" />
+                Visa
+              </span>
+              <span class="inline-flex items-center gap-1 text-xs bg-white border border-blue-200 text-blue-700 px-2 py-1 rounded-lg font-medium">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" class="h-3 w-auto" loading="lazy" />
+                Mastercard
+              </span>
+              <span class="inline-flex items-center gap-1 text-xs bg-white border border-blue-200 text-blue-700 px-2 py-1 rounded-lg font-medium">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/200px-American_Express_logo_%282018%29.svg.png" alt="Amex" class="h-3 w-auto" loading="lazy" />
+                Amex
+              </span>
+            </div>
+            <p class="text-xs text-blue-600 mt-1.5">⚠️ Cartões Elo, Hipercard e débito não são aceitos no momento.</p>
+          </div>
+        </div>
+
         <!-- Resumo do comprador -->
         <div class="bg-gray-50 rounded-xl p-4 mb-4 space-y-2 text-sm">
           <div v-if="isGuest">
