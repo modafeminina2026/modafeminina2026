@@ -83,7 +83,13 @@ export default defineEventHandler(async (event) => {
   }
 
   const stripe = useStripe()
-  const appUrl = config.public.appUrl as string
+
+  // Determinar APP_URL — em produção usa o host da requisição
+  const requestHost = getRequestHeader(event, 'host')
+  const requestProto = getRequestHeader(event, 'x-forwarded-proto') ?? 'https'
+  const appUrl = requestHost
+    ? `${requestProto}://${requestHost}`
+    : (config.public.appUrl as string)
 
   // Montar line items
   const lineItems = items.map((item) => {
