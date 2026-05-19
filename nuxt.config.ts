@@ -84,6 +84,7 @@ export default defineNuxtConfig({
         },
       ],
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         // Google Fonts — Inter + Playfair Display
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

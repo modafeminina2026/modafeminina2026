@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Mail } from 'lucide-vue-next'
+import { Mail, Heart } from 'lucide-vue-next'
 
 const email     = ref('')
 const subscribed = ref(false)
@@ -24,7 +24,7 @@ function subscribe() {
     </div>
 
     <h2 class="text-xl sm:text-2xl font-display font-bold text-gray-900 mb-2">
-      Receba Ofertas Exclusivas 💌
+      Receba Ofertas Exclusivas
     </h2>
     <p class="text-gray-600 text-sm sm:text-base mb-6 max-w-md mx-auto">
       Cadastre seu e-mail e seja a primeira a saber sobre promoções, lançamentos e novidades especiais.
@@ -34,7 +34,7 @@ function subscribe() {
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
       </svg>
-      Inscrito com sucesso! Obrigado 💕
+      Inscrito com sucesso! Obrigado
     </div>
 
     <form v-else class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate @submit.prevent="subscribe">

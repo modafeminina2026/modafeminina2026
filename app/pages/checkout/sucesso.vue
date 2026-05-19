@@ -91,10 +91,10 @@ useHead({
             <CheckCircle class="w-12 h-12 text-green-500" />
           </div>
           <h1 class="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-1">
-            Pedido Confirmado! 🎉
+            Pedido Confirmado!
           </h1>
           <p class="text-gray-500 text-sm">
-            Obrigada pela sua compra na Lover's Brasileiras 💕
+            Obrigada pela sua compra na Lover's Brasileiras
           </p>
           <p v-if="order.order_number" class="text-xs text-gray-400 mt-1">
             Pedido <span class="font-semibold text-gray-600">{{ order.order_number }}</span>
@@ -144,7 +144,7 @@ useHead({
           </div>
 
           <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-700">
-            💡 <strong>Importante:</strong> Apresente este código ao retirar seu pedido. Guarde-o com segurança!
+            <strong>Importante:</strong> Apresente este código ao retirar seu pedido. Guarde-o com segurança!
           </div>
         </div>
 
@@ -155,7 +155,7 @@ useHead({
             <h2 class="font-semibold text-gray-800">Entrega em Domicílio</h2>
           </div>
           <p class="text-gray-600 text-sm">
-            Você receberá um e-mail com o código de rastreamento assim que seu pedido for despachado. 📦
+            Você receberá um e-mail com o código de rastreamento assim que seu pedido for despachado.
           </p>
           <p class="text-gray-500 text-xs mt-2">Prazo estimado: 5 a 10 dias úteis</p>
         </div>

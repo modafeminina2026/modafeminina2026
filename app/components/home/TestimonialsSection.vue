@@ -24,7 +24,7 @@ const testimonials = [
 <template>
   <section aria-label="Depoimentos de clientes">
     <h2 class="text-xl sm:text-2xl font-display font-bold text-gray-900 text-center mb-6 sm:mb-8">
-      O Que Nossos Clientes Dizem 💕
+      O Que Nossos Clientes Dizem
     </h2>
 
     <!-- Mobile: vertical stack -->

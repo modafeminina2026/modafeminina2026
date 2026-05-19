@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MapPin, Clock, Package, CheckCircle, ChevronDown, ChevronUp } from 'lucide-vue-next'
+import { MapPin, Clock, Package, CheckCircle, ChevronDown, ChevronUp, ShoppingBag, Store, Hash } from 'lucide-vue-next'
 
 useHead({
   title: 'Retirada na Loja — Lover\'s Brasileiras',
@@ -11,25 +11,25 @@ const steps = [
     number: '1',
     title: 'Escolha seus produtos',
     desc: 'Navegue pelo catálogo e adicione ao carrinho os produtos desejados.',
-    icon: '🛍️',
+    icon: ShoppingBag,
   },
   {
     number: '2',
     title: 'Selecione "Retirada na Loja"',
     desc: 'No checkout, escolha a opção de retirada. O frete é totalmente GRÁTIS!',
-    icon: '📍',
+    icon: Store,
   },
   {
     number: '3',
     title: 'Receba seu código de 4 dígitos',
     desc: 'Após o pagamento, você receberá um código único de 4 dígitos para retirar seu pedido.',
-    icon: '🔢',
+    icon: Hash,
   },
   {
     number: '4',
     title: 'Retire em 3 dias úteis',
     desc: 'Seu pedido estará pronto em até 3 dias úteis. Apresente o código na loja e pronto!',
-    icon: '✅',
+    icon: CheckCircle,
   },
 ]
 
@@ -76,7 +76,9 @@ function toggleFaq(index: number) {
     <!-- Hero -->
     <div class="bg-gradient-to-br from-rose-500 to-pink-600 text-white py-12 px-4">
       <div class="max-w-3xl mx-auto text-center">
-        <div class="text-5xl mb-4">🏪</div>
+        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Store class="w-8 h-8 text-white" />
+        </div>
         <h1 class="text-2xl md:text-4xl font-display font-bold mb-3">
           Retirada Gratuita na Loja
         </h1>
@@ -105,7 +107,7 @@ function toggleFaq(index: number) {
             </div>
             <div class="flex-1">
               <div class="flex items-center gap-2 mb-1">
-                <span class="text-xl">{{ step.icon }}</span>
+                <component :is="step.icon" class="w-4 h-4 text-rose-500 flex-shrink-0" />
                 <h3 class="font-semibold text-gray-800">{{ step.title }}</h3>
               </div>
               <p class="text-sm text-gray-600">{{ step.desc }}</p>

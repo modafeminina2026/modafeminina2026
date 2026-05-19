@@ -23,7 +23,7 @@ const values = [
           Lover's Brasileiras
         </h1>
         <p class="text-white/90 text-base md:text-xl max-w-xl mx-auto">
-          Presentes que falam por você. Porque amor merece ser celebrado todos os dias. 💕
+          Presentes que falam por você. Porque amor merece ser celebrado todos os dias.
         </p>
       </div>
     </div>
@@ -67,26 +67,34 @@ const values = [
       <section class="mb-12">
         <h2 class="text-2xl font-display font-bold text-gray-900 mb-4">O Que Oferecemos</h2>
         <div class="grid grid-cols-2 gap-3">
-          <div class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-4 text-center">
-            <div class="text-3xl mb-2">👙</div>
+          <NuxtLink to="/categoria/lingerie" class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-4 text-center hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Heart class="w-5 h-5 text-rose-500" />
+            </div>
             <p class="font-semibold text-gray-800 text-sm">Lingerie</p>
             <p class="text-xs text-gray-500 mt-1">Elegância e sensualidade</p>
-          </div>
-          <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-4 text-center">
-            <div class="text-3xl mb-2">🌸</div>
+          </NuxtLink>
+          <NuxtLink to="/categoria/perfumes" class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-4 text-center hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Sparkles class="w-5 h-5 text-purple-500" />
+            </div>
             <p class="font-semibold text-gray-800 text-sm">Perfumes</p>
             <p class="text-xs text-gray-500 mt-1">Fragrâncias exclusivas</p>
-          </div>
-          <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-4 text-center">
-            <div class="text-3xl mb-2">💍</div>
+          </NuxtLink>
+          <NuxtLink to="/categoria/joias" class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-4 text-center hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Star class="w-5 h-5 text-amber-500" />
+            </div>
             <p class="font-semibold text-gray-800 text-sm">Joias</p>
             <p class="text-xs text-gray-500 mt-1">Peças que encantam</p>
-          </div>
-          <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-4 text-center">
-            <div class="text-3xl mb-2">💄</div>
+          </NuxtLink>
+          <NuxtLink to="/categoria/maquiagens" class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-4 text-center hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Gift class="w-5 h-5 text-pink-500" />
+            </div>
             <p class="font-semibold text-gray-800 text-sm">Maquiagens</p>
             <p class="text-xs text-gray-500 mt-1">Beleza e sofisticação</p>
-          </div>
+          </NuxtLink>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MapPin, Clock, ArrowRight } from 'lucide-vue-next'
+import { MapPin, Clock, ArrowRight, Store } from 'lucide-vue-next'
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import { MapPin, Clock, ArrowRight } from 'lucide-vue-next'
       <!-- Content -->
       <div class="flex-1">
         <h2 class="text-xl sm:text-2xl font-display font-bold text-rose-900">
-          Retire Grátis na Nossa Loja 🏪
+          <Store class="w-5 h-5 inline mr-1 align-text-bottom" aria-hidden="true" />Retire Grátis na Nossa Loja
         </h2>
         <p class="text-rose-700 text-sm sm:text-base mt-1">
           Sem frete! Disponível em até 3 dias úteis após o pagamento.

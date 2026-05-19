@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight } from 'lucide-vue-next'
+import { ArrowRight, Sparkles } from 'lucide-vue-next'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import { ArrowRight } from 'lucide-vue-next'
           Oferta Especial
         </AppBadge>
         <h2 class="text-xl sm:text-2xl font-display font-bold text-white">
-          Retire na Loja — Frete Grátis! 🎉
+          <Sparkles class="w-5 h-5 inline mr-1 align-text-bottom" aria-hidden="true" />Retire na Loja — Frete Grátis!
         </h2>
         <p class="text-purple-100 text-sm sm:text-base mt-1">
           Escolha retirada na loja e economize no frete. Disponível em até 3 dias úteis.
