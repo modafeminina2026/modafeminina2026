@@ -32,7 +32,7 @@ const organizationData = {
   email: 'contato@loversbrasileiras.com.br',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Rua das Flores, 123',
+    streetAddress: 'R. Dep. João Sussumu Hirata, 721',
     addressLocality: 'São Paulo',
     addressRegion: 'SP',
     postalCode: '01310-100',

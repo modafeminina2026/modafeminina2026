@@ -106,8 +106,8 @@ const values = [
             <MapPin class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
             <div>
               <p class="font-medium text-gray-700 text-sm">Endereço</p>
-              <p class="text-gray-600 text-sm">Rua das Flores, 123 — Centro</p>
-              <p class="text-gray-600 text-sm">São Paulo, SP — CEP 01310-100</p>
+              <p class="text-gray-600 text-sm">R. Dep. João Sussumu Hirata, 721 — Vila Andrade</p>
+              <p class="text-gray-600 text-sm">São Paulo, SP — CEP 05715-010</p>
             </div>
           </div>
           <div class="flex items-start gap-3">

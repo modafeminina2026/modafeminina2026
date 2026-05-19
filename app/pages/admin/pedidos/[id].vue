@@ -118,21 +118,24 @@ useHead({ title: computed(() => `Pedido ${(o.value?.order_number as string) ?? '
             <button
               v-if="o.pickup_status === 'waiting'"
               :disabled="updatingStatus"
-              class="px-4 py-2 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold transition-all disabled:opacity-60"
+              class="px-4 py-2 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold transition-all disabled:opacity-60 flex items-center gap-1.5"
               @click="markReady"
             >
-              ✅ Marcar como Pronto
+              <CheckCircle class="w-4 h-4" />
+              Marcar como Pronto
             </button>
             <button
               v-if="o.pickup_status === 'ready'"
               :disabled="updatingStatus"
-              class="px-4 py-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold transition-all disabled:opacity-60"
+              class="px-4 py-2 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold transition-all disabled:opacity-60 flex items-center gap-1.5"
               @click="markPickedUp"
             >
-              📦 Marcar como Retirado
+              <Package class="w-4 h-4" />
+              Marcar como Retirado
             </button>
-            <span v-if="o.pickup_status === 'picked_up'" class="px-3 py-2 rounded-xl bg-gray-700 text-gray-400 text-sm">
-              ✓ Retirado pelo cliente
+            <span v-if="o.pickup_status === 'picked_up'" class="px-3 py-2 rounded-xl bg-gray-700 text-gray-400 text-sm flex items-center gap-1.5">
+              <CheckCircle class="w-4 h-4 text-green-400" />
+              Retirado pelo cliente
             </span>
           </div>
         </div>
@@ -147,23 +150,31 @@ useHead({ title: computed(() => `Pedido ${(o.value?.order_number as string) ?? '
             <div
               v-for="item in (o.order_items as Record<string, unknown>[])"
               :key="item.id as string"
-              class="flex items-center gap-3"
+              class="flex items-center gap-3 p-2 bg-gray-700/30 rounded-xl"
             >
               <img
                 v-if="(item.products as Record<string, unknown>)?.images?.[0]"
                 :src="((item.products as Record<string, unknown>).images as string[])[0]"
                 :alt="item.product_name as string"
-                class="w-12 h-12 object-cover rounded-lg flex-shrink-0"
+                class="w-14 h-14 object-cover rounded-lg flex-shrink-0"
                 loading="lazy"
               >
-              <div v-else class="w-12 h-12 bg-gray-700 rounded-lg flex-shrink-0" />
+              <div v-else class="w-14 h-14 bg-gray-700 rounded-lg flex-shrink-0 flex items-center justify-center">
+                <Package class="w-6 h-6 text-gray-500" />
+              </div>
               <div class="flex-1 min-w-0">
-                <p class="text-gray-200 text-sm font-medium truncate">{{ item.product_name }}</p>
-                <p class="text-xs text-gray-500">
-                  Qtd: {{ item.quantity }}
-                  <span v-if="item.size"> · {{ item.size }}</span>
-                  <span v-if="item.color"> · {{ item.color }}</span>
-                </p>
+                <p class="text-gray-200 text-sm font-medium">{{ item.product_name }}</p>
+                <div class="flex flex-wrap gap-2 mt-1">
+                  <span class="text-xs text-gray-400 bg-gray-700 px-2 py-0.5 rounded">
+                    Qtd: {{ item.quantity }}
+                  </span>
+                  <span v-if="item.size" class="text-xs text-blue-300 bg-blue-900/30 px-2 py-0.5 rounded">
+                    Tamanho: {{ item.size }}
+                  </span>
+                  <span v-if="item.color" class="text-xs text-purple-300 bg-purple-900/30 px-2 py-0.5 rounded">
+                    Cor: {{ item.color }}
+                  </span>
+                </div>
               </div>
               <p class="text-gray-200 text-sm font-semibold flex-shrink-0">
                 {{ formatPrice(Number(item.unit_price) * Number(item.quantity)) }}

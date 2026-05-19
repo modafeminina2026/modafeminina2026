@@ -137,8 +137,8 @@ useHead({
               <MapPin class="w-4 h-4 text-rose-400 mt-0.5 flex-shrink-0" />
               <div>
                 <p class="font-medium text-gray-700">Endereço da Loja</p>
-                <p class="text-gray-600">Rua das Flores, 123 — Centro</p>
-                <p class="text-gray-600">São Paulo, SP — CEP 01310-100</p>
+                <p class="text-gray-600">R. Dep. João Sussumu Hirata, 721 — Vila Andrade</p>
+                <p class="text-gray-600">São Paulo, SP — CEP 05715-010</p>
               </div>
             </div>
           </div>

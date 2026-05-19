@@ -25,7 +25,7 @@ import { MapPin, Clock, ArrowRight, Store } from 'lucide-vue-next'
         <div class="flex flex-wrap gap-4 mt-3 text-sm text-rose-800">
           <span class="flex items-center gap-1.5">
             <MapPin class="w-4 h-4 text-rose-500" aria-hidden="true" />
-            Rua das Flores, 123 — Centro, SP
+            R. Dep. João Sussumu Hirata, 721 — Vila Andrade, SP
           </span>
           <span class="flex items-center gap-1.5">
             <Clock class="w-4 h-4 text-rose-500" aria-hidden="true" />

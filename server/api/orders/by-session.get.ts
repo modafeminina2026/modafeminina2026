@@ -85,6 +85,15 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 500, message: 'Erro ao criar pedido' })
   }
 
+  // Re-fetch to get trigger-generated fields (pickup_code, order_number)
+  const { data: freshOrder } = await adminClient
+    .from('orders')
+    .select('id, order_number, status, total, subtotal, shipping_cost, delivery_method, pickup_code, pickup_status, pickup_ready_by, gift_message, gift_wrap, guest_name, guest_email, created_at')
+    .eq('id', newOrder.id)
+    .single()
+
+  const orderToReturn = freshOrder ?? newOrder
+
   // Create order items
   for (const item of items) {
     await adminClient.from('order_items').insert({
@@ -104,5 +113,5 @@ export default defineEventHandler(async (event) => {
     }).catch(() => {})
   }
 
-  return newOrder
+  return orderToReturn
 })

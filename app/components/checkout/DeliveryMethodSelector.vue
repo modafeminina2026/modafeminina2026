@@ -70,7 +70,7 @@ function select(method: DeliveryMethod) {
           <AppBadge variant="green" size="sm">GRÁTIS</AppBadge>
         </div>
         <p class="text-sm text-gray-500 mt-0.5">Disponível em até 3 dias úteis</p>
-        <p class="text-xs text-gray-400 mt-1">Rua das Flores, 123 — Centro, São Paulo/SP</p>
+        <p class="text-xs text-gray-400 mt-1">R. Dep. João Sussumu Hirata, 721 — Vila Andrade, São Paulo/SP</p>
       </div>
       <div
         class="w-5 h-5 rounded-full border-2 shrink-0 mt-0.5 flex items-center justify-center"

@@ -54,7 +54,7 @@ const estimatedDate = computed(() => {
     <ul class="space-y-2 text-sm text-rose-900">
       <li class="flex items-start gap-2">
         <MapPin class="w-4 h-4 shrink-0 mt-0.5 text-rose-500" aria-hidden="true" />
-        <span>Rua das Flores, 123 — Centro, São Paulo/SP</span>
+        <span>R. Dep. João Sussumu Hirata, 721 — Vila Andrade, São Paulo/SP</span>
       </li>
       <li class="flex items-start gap-2">
         <Calendar class="w-4 h-4 shrink-0 mt-0.5 text-rose-500" aria-hidden="true" />

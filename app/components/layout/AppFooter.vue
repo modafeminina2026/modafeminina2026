@@ -48,7 +48,7 @@ function subscribe() {
           <ul class="space-y-2 text-rose-200 text-sm">
             <li class="flex items-start gap-2">
               <MapPin class="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-              <span>Rua das Flores, 123<br>Centro — São Paulo, SP</span>
+              <span>R. Dep. João Sussumu Hirata, 721<br>Centro — São Paulo, SP</span>
             </li>
             <li class="flex items-center gap-2">
               <Phone class="w-4 h-4 shrink-0" aria-hidden="true" />
